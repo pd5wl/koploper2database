@@ -15,7 +15,12 @@ s.connect((HOST, PORT))
 while True:
     data = s.recv(256)
     data = data.decode('UTF-8')
-    print(data)
+    data = data.replace("(", '')
+    data = data.replace(")", '')
+    data = data.replace("\x1b", ";")
+    # ; separator
+    datalist = data.split(';')
+    print(datalist)
 
 while False:
     s.close()
