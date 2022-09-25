@@ -1,7 +1,7 @@
 mysql = {
     'host': 'localhost',
-    'user': 'larosnet_koploper',
-    'password': 'DTX3KQV6x',
-    'database': 'larosnet_koploper',
+    'user': 'usr',
+    'password': 'passwd',
+    'database': 'db',
     'raise_on_warnings': True
 }
