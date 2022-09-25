@@ -21,6 +21,10 @@ while True:
     # ; separator
     datalist = data.split(';')
     print(datalist)
+    loc = datalist[0]
+    blok = datalist[1]
+    route = datalist[4]
+    print("Locomotief", loc, "staat in blok", blok, "en volgt route", route)
 
 while False:
     s.close()
