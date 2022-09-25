@@ -4,7 +4,6 @@
 #
 import socket
 
-
 HOST = 'localhost'
 PORT = 5700
 
@@ -23,7 +22,7 @@ while True:
     loc = datalist[0]
     blok = datalist[1]
     route = datalist[4]
-    print("Locomotief", loc, "staat in blok", blok, "en volgt route", route)
+    print("Locomotief", loc, "staat in blok", blok, "en volgt route", route,"/n")
 
 while False:
     s.close()
