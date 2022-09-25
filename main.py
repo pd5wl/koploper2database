@@ -1,11 +1,10 @@
 # De TCP client
 #
-# Lees de data, knipt het op en slaat het op in een database.
+# Lees de data, knipt het op en update het in een database.
 #
 import socket
 
 
-# HOST = '192.168.68.108'
 HOST = 'localhost'
 PORT = 5700
 
