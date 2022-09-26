@@ -5,8 +5,6 @@
 /.idea/inspectionProfiles/profiles_settings.xml
 /.idea/inspectionProfiles/Project_Default.xml
 /.idea/vcs.xml
-/config.py
-/kl_output.txt
-/make file.py
 /etc/*
 /output/*
+/test_omgeving/*
