@@ -50,10 +50,10 @@ def wrtfile(datalist):
     route = datalist[4]
     # procces write to file
     if cfg.kl_tijd == 1:
-        line = (loc, ",", mod_time, ",", blok, ",", route, '\n')
+        line = (loc, mod_time, blok, route, '\n')
         values = ','.join(str(v) for v in line)
         f.write(values)
     else:
-        line = (loc, ",", real_time, ",", blok, ",", route, '\n')
+        line = (loc, real_time, blok, route, '\n')
         values = ','.join(str(v) for v in line)
         f.write(values)
