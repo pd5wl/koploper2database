@@ -1,11 +1,12 @@
 import mysql.connector
 # from mysql.connector import errorcode
 import etc.config as cfg
+import os
 
 mydb = mysql.connector.connect(**cfg.mysql)
 mycursor = mydb.cursor()
 
-
+savefile = os.path.join(cfg.save_path, cfg.file_name)
 def dbsql(datalist):
     # take list to set values for SQL proccessing
     loc = datalist[0]
@@ -23,7 +24,7 @@ def dbsql(datalist):
 # Write to file
 # 1 for append to file. 0 create a new file every time you start
 if cfg.op_fileadd == 1:
-    f = open("output\kl_output.txt", "a")
+    f = open(savefile, "a")
 #    line1 = ("Opmaak van de data", '\n')
 #    kop1 = ','.join(str(v) for v in line1)
 #    line2 = ("loc, time, blok, route", '\n')
@@ -31,7 +32,7 @@ if cfg.op_fileadd == 1:
 #    f.write(kop1)
 #    f.write(kop2)
 else:
-    f = open("output\kl_output.cvs", "w")
+    f = open(savefile, "w")
     line1 = ("Opmaak van de data", '\n')
     kop1 = ','.join(str(v) for v in line1)
     line2 = ("loc, time, blok, route", '\n')
