@@ -18,3 +18,41 @@ def dbsql(datalist):
                      (blok, mod_time, real_time, route, loc))
     mydb.commit()
     print(mycursor.rowcount, "record(s) affected")
+
+
+# Write to file
+# 1 for append to file. 0 create a new file every time you start
+if cfg.op_fileadd == 1:
+    f = open("output\kl_output.txt", "a")
+#    line1 = ("Opmaak van de data", '\n')
+#    kop1 = ','.join(str(v) for v in line1)
+#    line2 = ("loc, time, blok, route", '\n')
+#    kop2 = ','.join(str(v) for v in line2)
+#    f.write(kop1)
+#    f.write(kop2)
+else:
+    f = open("output\kl_output.cvs", "w")
+    line1 = ("Opmaak van de data", '\n')
+    kop1 = ','.join(str(v) for v in line1)
+    line2 = ("loc, time, blok, route", '\n')
+    kop2 = ','.join(str(v) for v in line2)
+    f.write(kop1)
+    f.write(kop2)
+
+# Write the file
+def wrtfile(datalist):
+    # take list to set values for SQL proccessing
+    loc = datalist[0]
+    blok = datalist[1]
+    mod_time = datalist[2]
+    real_time = datalist[3]
+    route = datalist[4]
+    # procces write to file
+    if cfg.kl_tijd == 1:
+        line = (loc, ",", mod_time, ",", blok, ",", route, '\n')
+        values = ','.join(str(v) for v in line)
+        f.write(values)
+    else:
+        line = (loc, ",", real_time, ",", blok, ",", route, '\n')
+        values = ','.join(str(v) for v in line)
+        f.write(values)

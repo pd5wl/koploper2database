@@ -4,10 +4,10 @@
 #
 import socket
 import functions as func
-import etc.config as config
+import etc.config as cfg
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-s.connect((config.sckthost, config.scktport))
+s.connect((cfg.sckthost, cfg.scktport))
 
 while True:
     # modify data for further use
@@ -18,8 +18,13 @@ while True:
     data = data.replace("\x1b", ";")
     # Split data with use of the ; separator
     datalist = data.split(';')
-    # call sql funstion
-    func.dbsql(datalist)
+
+    if cfg.op_select == 1:
+        # call sql funstion
+        func.dbsql(datalist)
+    else:
+        # write file
+        func.wrtfile(datalist)
 
 while False:
     s.close()
