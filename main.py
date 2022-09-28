@@ -3,8 +3,12 @@
 # Lees de data, knipt het op en update het in een database.
 #
 import socket
-import functions as func
 import etc.config as cfg
+
+if cfg.op_select == 1:
+    import dbhandeling as func
+else:
+    import filehandeling as func
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 s.connect((cfg.sckthost, cfg.scktport))
