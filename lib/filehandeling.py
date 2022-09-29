@@ -12,10 +12,15 @@ if cfg.op_fileadd == 1:
     f = open(savefile, "a")
     line1 = ("Aanmaak datum :", now.strftime("%Y-%m-%d %H:%M:%S"), '\n')
     kop1 = ','.join(str(v) for v in line1)
-#    line2 = ("loc, blok, time, route", '\n')
-#    kop2 = ','.join(str(v) for v in line2)
+    line2 = ("loc, blok, time, route", '\n')
+    kop2 = ','.join(str(v) for v in line2)
     f.write(kop1)
-#    f.write(kop2)
+    f.write(kop2)
+    if cfg.dbg_print == 1:
+        print(kop1)
+        print(kop2)
+    else:
+        pass
     f.flush()
 else:
     f = open(savefile, "w")
@@ -25,6 +30,11 @@ else:
     kop2 = ' '.join(str(v) for v in line2)
     f.write(kop1)
     f.write(kop2)
+    if cfg.dbg_print == 1:
+        print(kop1)
+        print(kop2)
+    else:
+        pass
     f.flush()
 
 # Write to a file
@@ -42,9 +52,17 @@ def passdata(datalist):
         line = (loc, blok, mod_time, route, '\n')
         values = ','.join(str(v) for v in line)
         f.write(values)
+        if cfg.dbg_print == 1:
+            print(values)
+        else:
+            pass
         f.flush()
     else:
         line = (loc, blok, real_time, route, '\n')
         values = ','.join(str(v) for v in line)
         f.write(values)
+        if cfg.dbg_print == 1:
+            print(values)
+        else:
+            pass
         f.flush()

@@ -26,3 +26,8 @@ def passdata(datalist):
             route = values(route)"
     mycursor.execute(query, values)
     mydb.commit()
+
+    if cfg.dbg_print == 1:
+        print("Bla bla car")
+    else:
+        pass
