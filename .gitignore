@@ -5,6 +5,6 @@
 /.idea/inspectionProfiles/profiles_settings.xml
 /.idea/inspectionProfiles/Project_Default.xml
 /.idea/vcs.xml
-/etc/*
+/etc/config.py
 /output/*
 /test_omgeving/*
