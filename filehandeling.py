@@ -3,10 +3,11 @@ import os
 import datetime
 
 savefile = os.path.join(cfg.save_path, cfg.file_name)
+now = datetime.datetime.now()
 
 # Write to file
-now = datetime.datetime.now()
-# 1 for append to file. 0 create a new file every time you start
+# Append to file or create a new file every time you start
+
 if cfg.op_fileadd == 1:
     f = open(savefile, "a")
     line1 = ("Aanmaak datum :", now.strftime("%Y-%m-%d %H:%M:%S"), '\n')
@@ -26,14 +27,17 @@ else:
     f.write(kop2)
     f.flush()
 
-def wrtfile(datalist):  # Write the file
-    # take list to set values for SQL proccessing
+# Write to a file
+
+
+def passdata(datalist):
     loc = datalist[0]
     blok = datalist[1]
     mod_time = datalist[2]
     real_time = datalist[3]
     route = datalist[4]
-    # procces write to file
+
+# write with model time or real time
     if cfg.kl_tijd == 1:
         line = (loc, blok, mod_time, route, '\n')
         values = ','.join(str(v) for v in line)

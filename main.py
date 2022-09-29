@@ -1,6 +1,6 @@
 # De TCP client
 #
-# Lees de data, knipt het op en update het in een database.
+# Lees en knip de data op en stuur het naar de handler.
 #
 import socket
 import etc.config as cfg
@@ -20,15 +20,12 @@ while True:
     data = data.replace("(", '')
     data = data.replace(")", '')
     data = data.replace("\x1b", ";")
+
     # Split data with use of the ; separator
     datalist = data.split(';')
 
-    if cfg.op_select == 1:
-        # call sql funstion
-        func.dbsql(datalist)
-    else:
-        # write file
-        func.wrtfile(datalist)
+    # Pass the data to the handler
+    func.passdata(datalist)
 
 while False:
     s.close()
