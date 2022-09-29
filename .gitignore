@@ -9,4 +9,5 @@
 /output/*
 /test_omgeving/*
 /etc/__init__.py
+/dist/
 /lib/__init__.py
