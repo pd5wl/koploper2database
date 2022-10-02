@@ -22,5 +22,8 @@ save_path = 'output'  # Save where (relative)
 file_name = "test.txt"  # Save name
 kl_tijd = 1  # 1 for model time and 0 for realtime
 
+# Add-Ons
+trace_train = 1  # 1 to see the prevous blok of the train (Works only for the database storage)
+
 # Debug options
 dbg_print = 1  # 1 to print debug data

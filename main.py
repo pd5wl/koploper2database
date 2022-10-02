@@ -15,13 +15,18 @@ s.connect((cfg.sckthost, cfg.scktport))
 
 while True:
     # modify data for further use
-    data = s.recv(256)
+    data = s.recv(512)
     data = data.decode('UTF-8')
     data = data.replace("(", '')
     data = data.replace(")", '')
     data = data.replace("\x1b", ";")
     # Split data with use of the ; separator
     datalist = data.split(';')
+    # Traceer de trein Add-On
+    if cfg.trace_train == 1:
+        func.trackloc(datalist)
+    else:
+        pass
     # Pass the data to the handler
     func.passdata(datalist)
 

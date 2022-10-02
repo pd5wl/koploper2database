@@ -28,6 +28,22 @@ def passdata(datalist):
     mydb.commit()
 
     if cfg.dbg_print == 1:
-        print("Bla bla car")
+        print("Record ingevoegd of bijgewerkt")
     else:
         pass
+
+def trackloc(datalist):
+    loc = datalist[0]
+    sql_lees = "SELECT blok FROM output WHERE loc = '%s'"
+    mycursor.execute(sql_lees,loc)
+    record = mycursor.fetchone()
+    vorig_blok = record[0]
+    updata_data = (vorig_blok, loc)
+    sql_update = " UPDATE output SET vorig_blok = '%s' WHERE loc = '%s' "
+    mycursor.execute(sql_update, updata_data)
+    mydb.commit()
+    if cfg.dbg_print == 1:
+        print("Vorig blok geupdate")
+    else:
+        pass
+    return

@@ -11,6 +11,7 @@
 CREATE TABLE IF NOT EXISTS `output` (
   `loc` int(11) NOT NULL,
   `blok` int(11) NOT NULL,
+  `vorig_blok` int(11) NOT NULL,
   `mod_time` text NOT NULL,
   `real_time` text NOT NULL,
   `route` text NOT NULL,
