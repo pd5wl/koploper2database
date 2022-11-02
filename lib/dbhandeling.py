@@ -32,10 +32,11 @@ def passdata(datalist):
     else:
         pass
 
+
 def trackloc(datalist):
     loc = datalist[0]
     sql_lees = "SELECT blok FROM output WHERE loc = '%s'"
-    mycursor.execute(sql_lees,loc)
+    mycursor.execute(sql_lees, loc)
     record = mycursor.fetchone()
     vorig_blok = record[0]
     updata_data = (vorig_blok, loc)
