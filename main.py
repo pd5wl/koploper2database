@@ -13,6 +13,9 @@ else:
     print("Config Error, please check your config file.")
     exit()
 
+print("Running koploper2database.")
+print("CRTL-C to Quit"
+      "")
 if cfg.dbg_svr == 1:
     print("Test Server")
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)

@@ -45,10 +45,12 @@ def trackloc(datalist):
         pass
     mycursor.execute(sql_lees, update_data)
     record = mycursor.fetchone()
-    print("Gelezen record : ", record)
+    if cfg.dbg_print == 1:
+        print("Gelezen record : ", record)
+    else:
+        pass
     vorig_blok = record[0]
     update_data.insert(0, vorig_blok)
-    print(update_data)
     if cfg.dbg_print == 1:
         print("Data om in de DB te verwerken : ", update_data)
     else:
