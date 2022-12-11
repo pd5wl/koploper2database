@@ -10,7 +10,9 @@ mysql = {
 }
 
 # socket info
-sckthost = "[koploperip]]"
+
+# Make shure that in koploper poort 5700 is enabled
+sckthost = "[koploperip]"
 scktport = 5700
 
 # Output options
@@ -27,3 +29,4 @@ trace_train = 1  # 1 to see the prevous blok of the train (Works only for the da
 
 # Debug options
 dbg_print = 1  # 1 to print debug data
+dbg_svr = 1 # 1 to use local test server to debug data
